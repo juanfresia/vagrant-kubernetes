@@ -7,7 +7,7 @@ set -exuo
 CACHE_DIR=/vagrant/cache
 
 ## Attempt to join
-# ${CACHE_DIR}/cluster-join.sh
+${CACHE_DIR}/cluster-join.sh
 
 ## Setup kubeconfig (as root)
 mkdir -p $HOME/.kube
