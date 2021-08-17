@@ -11,9 +11,9 @@ apt-get install -y vim
 #TODO: take from config.yaml
 ## Add all nodes to /etc/hosts
 cat <<-EOF >>/etc/hosts
-    10.0.0.2 node-1
-    10.0.0.3 node-2    
-    EOF
+	10.0.0.2 node-1
+	10.0.0.3 node-2    
+	EOF
 
 # Install Docker CE
 ## Following: https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
