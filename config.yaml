@@ -1,0 +1,19 @@
+---
+machine:
+  image: "ubuntu/bionic64"
+  memory: "2048"
+  cpus: "3"
+
+nodes:
+  - ip: 192.168.0.102
+    disks:
+      - size: 2 # Size in Gb
+  - ip: 192.168.0.103
+    disks:
+      - size: 2
+#  - ip: 192.168.0.104
+#    disks:
+#      - size: 1
+#  - ip: 192.168.0.105
+#    disks:
+#      - size: 1
