@@ -6,9 +6,11 @@ machine:
 
 nodes:
   - ip: 192.168.0.102
+    role: master
     disks:
       - size: 2 # Size in Gb
   - ip: 192.168.0.103
+    role: worker
     disks:
       - size: 2
 #  - ip: 192.168.0.104

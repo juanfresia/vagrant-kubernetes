@@ -3,6 +3,7 @@
 set -exuo
 
 # Setup directory to stash stuff
+## This should be shared among all the nodes
 CACHE_DIR=/vagrant/cache
 mkdir -p ${CACHE_DIR}
 
