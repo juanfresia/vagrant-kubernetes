@@ -8,6 +8,13 @@ apt-get update && apt-get upgrade -y
 # Install useful dev packages
 apt-get install -y vim
 
+#TODO: take from config.yaml
+## Add all nodes to /etc/hosts
+cat <<-EOF >>/etc/hosts
+    10.0.0.2 node-1
+    10.0.0.3 node-2    
+    EOF
+
 # Install Docker CE
 ## Following: https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
@@ -46,7 +53,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 
 
-# Istall kubernetes tooling
+# Install kubernetes tooling
 
 ## Install kubernetes apt repository
 echo "deb  http://apt.kubernetes.io/  kubernetes-xenial  main" | tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
@@ -55,7 +62,6 @@ curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 ## Install kubernetes pacakges
 apt-get update && apt-get install -y kubeadm=1.20.1-00 kubelet=1.20.1-00 kubectl=1.20.1-00
 apt-mark hold kubelet kubeadm kubectl
-
 
 ### The setup most continue differently depending if we are in the master or in the node
 if [[ "${NODE_ROLE}" == "master" ]]; then

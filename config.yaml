@@ -5,11 +5,11 @@ machine:
   cpus: "3"
 
 nodes:
-  - ip: 192.168.0.102
+  - ip: 10.0.0.2
     role: master
     disks:
       - size: 2 # Size in Gb
-  - ip: 192.168.0.103
+  - ip: 10.0.0.3
     role: worker
     disks:
       - size: 2
