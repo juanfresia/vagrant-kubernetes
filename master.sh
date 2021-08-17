@@ -10,7 +10,7 @@ echo "Installing control plane node"
 
 # un-hardcode IP and node name
 kubeadm init --config=kubeadm-config.yaml --upload-certs \
-    | tee ${CACHE_DIR}/cache/kubeadm-init.out
+    | tee ${CACHE_DIR}/kubeadm-init.out
 
 ## Setup kubeconfig
 mkdir -p $HOME/.kube
