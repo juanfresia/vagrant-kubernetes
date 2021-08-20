@@ -36,7 +36,6 @@ Vagrant.configure(2) do |config|
 
     node_ip = node['ip']
     node_role = node['role']
-    node_disks = node['disks']
 
     config.vm.define name do |box|
       box.vm.network "private_network", ip: node_ip

@@ -7,16 +7,9 @@ machine:
 nodes:
   - ip: 10.0.0.2
     role: master
-    disks:
-      - size: 2 # Size in Gb
   - ip: 10.0.0.3
     role: worker
-    disks:
-      - size: 2
   - ip: 10.0.0.4
     role: worker
-    disks:
-      - size: 1
-#  - ip: 192.168.0.105
-#    disks:
-#      - size: 1
+#  - ip: 10.0.0.5
+#    role: worker
