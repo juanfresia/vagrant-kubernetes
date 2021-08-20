@@ -20,3 +20,7 @@ mkdir -p /home/${TARGET_USER}/.kube
 cp -i ${CACHE_DIR}/admin.conf /home/${TARGET_USER}/.kube/config
 chown $(id -u ${TARGET_USER}):$(id -g ${TARGET_USER}) /home/${TARGET_USER}/.kube/config
 
+## Configure nice kubectl
+apt-get install bash-completion -y
+source <(kubectl completion bash) && \
+    echo "source <(kubectl completion bash)" >> $HOME/.bashrc
