@@ -8,14 +8,6 @@ apt-get update && apt-get upgrade -y
 # Install useful dev packages
 apt-get install -y vim
 
-#TODO: take from config.yaml
-## Add all nodes to /etc/hosts
-cat <<-EOF >>/etc/hosts
-	10.0.0.2 node-1
-	10.0.0.3 node-2
-	10.0.0.4 node-3
-	EOF
-
 # Disable swap
 swapoff -a
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab

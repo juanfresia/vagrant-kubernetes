@@ -29,6 +29,15 @@ Vagrant.configure(2) do |config|
     vb.linked_clone = true
   end
 
+  # Pre-scan all nodes to generate /etc/hosts
+  hosts = ""
+  nodes.each do |node|
+    index = (yaml['nodes'].index(node)+1).to_s
+    name = BASENAME+index
+
+    hosts += "#{node['ip']}\t#{name}\n"
+  end
+
   # Configure each machine independently
   nodes.each do |node|
     index = (yaml['nodes'].index(node)+1).to_s
@@ -42,6 +51,11 @@ Vagrant.configure(2) do |config|
       box.vm.hostname = name
       box.vm.provider "virtualbox" do |vb|
         vb.name = name
+      end
+
+      box.vm.provision "shell" do |s|
+        s.privileged = true
+        s.inline = "echo \"#{hosts}\" >> /etc/hosts"
       end
 
       box.vm.provision "shell" do |s|

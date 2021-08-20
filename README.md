@@ -22,8 +22,9 @@ As per this configuration, each machine will be named `node-X` where `node-1` is
 the control plane node. `node-2` and `node-3` will be worker nodes and any other
 one will get an incremental ID.
 
-The IPs of the nodes are stated in the `config.yaml` and also refrenced in
-`provision.sh`. They are within the 10.0.0.0/24 range.
+The IPs of the nodes are stated in the `config.yaml`. They are within the
+10.0.0.0/24 range. 10.0.0.2 is always expected to be the IP of the control plane
+(and the first node).
 
 The Pods IP range is configured by default to `192.168.0.0/16`. The cluster is
 deployed with Calico as the network provider, and the range was selected to
