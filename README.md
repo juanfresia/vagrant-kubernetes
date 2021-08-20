@@ -1,4 +1,4 @@
-# Sandbox endironment for CKA practice on Vagrant
+# Sandbox environment for CKA practice on Vagrant
 
 This repo contains scripts and configuration files needed to bring up a cluster
 of virtual machines with a running Kubernetes cluster (1 control plane node, 2
